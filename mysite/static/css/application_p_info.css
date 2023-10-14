@@ -1,0 +1,147 @@
+/* ======================== general ============================= */
+body {
+    font-family: 'M PLUS 1p', sans-serif;
+    overflow-x:hidden; 
+    color: black;
+    font-weight: 500;
+    line-height: 2;
+}
+html{
+  scroll-behavior: smooth;
+}
+section {
+    background:  #f4ffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  -ms-box-shadow: none !important; 
+}
+label {
+  font-size: 0.9rem;
+}
+
+
+
+/* ==================== application nav section ========================== */
+
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #000000;
+    background-color: #f4ffff;
+    border-bottom: 4px solid green;
+  }
+  .nav-pills .nav-link {
+    border-radius: 0rem;
+  }
+  .tracks-header {
+    border-bottom: 5px solid #E6E7E8;
+    color: #656477;
+  }
+  .round {
+      border-radius: 20px;
+  }
+
+  .navitem .nav-link{
+    padding: 1rem; 
+    
+  }
+  
+  .navitem .nav-link.active {
+    color: white;
+    background-color: #6FCF97;
+    border-radius: 25px 100px 100px 25px;
+    padding: 1rem;
+  }
+
+  /* === resume  =====*/
+
+  .inputfile, #profile-pic  {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    color: black;
+    background-color:  #4DE897;
+    display: inline-block;
+    cursor: pointer; 
+    padding: .25rem 1rem;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: lightgreen;
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.inputfile + label * {
+	pointer-events: none;
+}
+
+  /* == personal information === */
+
+.pic-label {
+   color: black;
+   background-color:  #4DE897;
+   cursor: pointer; 
+   padding: .25rem 1rem;
+}
+.scnd_form {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #4DE897
+  }
+.comp {
+    color: red;
+  }
+.submit-btn {
+    background: #4DE897;
+}
+img#blah{
+   max-height: 7rem;
+   border-radius: 50%;
+   width:10%;
+ }
+ 
+
+
+  /* education */
+
+  /* skills and others */
+
+  
+  @media screen and (max-width: 768px) {
+  
+   
+  /* tracks section  */
+  .tracks-header {
+    margin: .4rem;
+  }
+  
+  .tracks-top {
+    margin-left: 10%;
+  }
+  
+/* personal info */
+img#blah{
+   max-height: 3rem;
+   width: 15%;
+}
+
+  /* overide navbar_footer.css */
+#mb-nav {
+   margin-bottom: 0px;
+  
+  }
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+      
+   {% comment %} {% block extrastyle %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+   {% endblock extrastyle %} {% endcomment %}
+        
+      {% block title %} Dashboard - {% endblock title %}
+
+
+
+      
+
+{% block content %}
+
+
+{% include 'partials/other_navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+    Hi {{ request.user }}
+      
+           {% comment %} {% load pinax_referrals_tags %} {% endcomment %}
+
+       <p> Click to copy your referral link {{refer.referral.url }} </p>    
+<hr>
+
+{% load pinax_referrals_tags %}
+{% referral_responses user as responses %}
+
+{% for response in responses %}
+{% if response.action|action_display == "Linked Created" %}
+    <p>
+    {{ response.action|action_display }}
+    </p>
+    {% endif %}
+{% endfor %}
+
+
+        {% endblock content %}
+
+       

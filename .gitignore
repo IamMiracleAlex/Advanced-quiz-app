@@ -1,0 +1,7 @@
+media
+__pycache__/
+.vscode
+env/
+db.sqlite3
+.DS_Store
+migrations/

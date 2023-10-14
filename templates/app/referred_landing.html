@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+      
+   {% comment %} {% block extrastyle %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/referred_landing.css' %}">
+   {% endblock extrastyle %} {% endcomment %}
+        
+      {% block title %} Dashboard - {% endblock title %}
+
+
+{% block content %}
+
+{% include 'partials/other_navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+  <h1>Hello, Welcome to Edubridge Academy</h1>
+
+  <p>You were referred by {{ referrer }} </p>
+
+  <a href="{% url 'apply' %}">Apply</a> to start Learning
+
+
+
+{% endblock content %}
+
+       

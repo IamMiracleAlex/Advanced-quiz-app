@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extrastyle %}
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"> {% endcomment %}
+    <style>
+    body {
+        font-family: 'M PLUS 1p', sans-serif;
+        overflow-x: hidden;
+    }
+    .large {
+        font-size: 400%;
+        color: #60C27A;
+        margin-right: 1rem;
+    }
+    .med {
+        font-size: 80%;
+        color: #5f5c5c;
+    }
+    .home-btn {
+        background: #60C27A;
+        color: white;
+        border: 1px solid #60C27A;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    h4 a:hover {
+        text-decoration: none;
+    }
+    @media(max-width: 767px) {
+        .large{ font-size: 250%; }
+        .med { font-size: 60%; }
+    }
+    </style>
+{% endblock extrastyle %}
+
+{% block title %} 500 -Internal Server Error - {% endblock title %}
+
+
+
+{% block content %}
+<br> <br> <br> <br>
+  <!-- ================ landing page ============================= -->
+
+
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-center"><span class="large">500 <br></span>  <span class="med">Oops! An error occurred in the server.</span></h1>
+
+            <br> <br>
+
+            <p class="text-center">Sorry, An unexpected error occurred in the server. The website administrator has been notified.</p>
+
+            <h4 class="text-center"><a href="{% url 'index' %}"><button class="d-inline home-btn">GO TO <i class="fas fa-home"></i> HOMEPAGE</button></a></h4> 
+
+        </div>
+
+    </div>
+  </div>
+  <br>
+
+
+
+   <br> <br>
+
+{% endblock content %}

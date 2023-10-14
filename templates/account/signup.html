@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+{% load socialaccount %}
+      
+   {% block extrastyle %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/login_signup.css' %}">
+<link href="{% static 'css/jquery-form-validator.min.css' %}" rel="stylesheet" type="text/css" />
+   {% endblock extrastyle %}
+        
+      {% block title %} Sign Up - {% endblock title %}
+
+
+{% block content %}
+
+
+      <section > 
+         <a class="navbar-brand mt-3 ml-5" href="{% url 'index' %}">
+            <img src="{% static 'img/edu_logo_black.png' %}" class="img img-fluid"
+               height="65px" width="115px">
+         </a>
+
+         {% include 'partials/alerts.html' %}
+
+         <br> 
+
+    <div class="container">
+    <div class="row ">
+        <div class="col-lg-6 col-sm-10 p-5 shadow-lg mx-auto rounded-lg">
+            <h4 class="text-left font-weight-bolder">Let's get to know you!</h4>
+            <br> 
+                  
+<div class="row text-center">
+  <div class="col-lg-12 ">
+    <button onclick="window.location='{% provider_login_url "google" %}';" class="btn btn-outline-danger"> 
+        <img width="20px" alt="Google Sign up" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" /> Sign up with Google</button>
+    
+    <button onclick="window.location='{% provider_login_url "linkedin_oauth2" %}';" class="btn btn-outline-primary smal"> 
+        <img width="20px" alt="Linkedin Sign up" src="https://image.flaticon.com/icons/svg/174/174857.svg" /> Sign up with Linkedin</button>
+  </div>
+</div>
+<br> 
+
+        <h6 class="horizontal mt-3 mb-3"><span>or</span></h6>
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+
+
+        <div id="message" class="container">
+           <div class="alert alert-danger alert-dimissible text-center" role="alert">
+              <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+              <p>{{ error|escape }}</p>
+           </div>
+        </div>
+
+        {% endfor %}
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        <div id="message" class="container">
+           <div class="alert alert-danger alert-dimissible text-center" role="alert">
+              <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+              <p>{{ error|escape }}</p>
+           </div>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        
+        <br>
+
+                  <form id="signup_form" action="{% url 'account_signup' %}" method="POST">
+                        {% csrf_token %}
+                     
+                  <div class="row" style="padding-bottom:20px;">
+                  
+                     <div class="col-lg-12">
+                        <div class="form-group"> 
+                           <label for="title"><span class="comp">* </span>Email</label>
+                           {{ form.email|add_attr:"class:form-control scnd_form,data-validation:email,placeholder: " }} 
+                           
+                        </div>
+                     </div>
+
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                                 <!-- <br>  -->
+                              <label for="password"><span class="comp">* </span>Password</label>
+                                
+                               {{ form.password1|add_attr:"class:form-control  scnd_form,data-validation:length,data-validation-length:min8,placeholder: " }}
+                             
+                           </div>
+                        </div>
+   
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <!-- <br>  -->
+                              <label for="password2"><span class="comp">* </span>Confirm Password</label>
+                            
+                                {{ form.password2|add_attr:"class:form-control  scnd_form,placeholder: " }} 
+                             
+                           </div>
+                        </div>
+
+                     </div>
+   
+                     <div class="text-center mt-3">
+                       
+                          {% comment %} <input type="submit" class="btn pr-5 pl-5 font-weight-bold submit-btn" value="SIGN UP"> {% endcomment %}
+
+                          <button type="submit" class="btn pr-5 pl-5 font-weight-bold submit-btn" >SIGN UP</button> 
+
+                        <br> <br>
+                        <p>Already have an account? <a href="{% url 'account_login' %}">Login</a></p>
+                     </div>   
+
+                  </form>
+                   
+                     <br>
+                  </div>
+
+
+               </div>
+
+            </div>
+
+
+
+         <br> <br> <br>
+
+      
+      </section>
+
+
+      {% endblock content %}
+  
+   
+   {% block javascript %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+   <script>
+      $.validate({
+         modules: 'security'
+      });
+   </script>
+    <script>
+      $(document).on('submit', '#signup_form', function(e){
+    $('.submit-btn').html('<i class="fa fa-spinner fa-spin"></i> Loading');
+    });  
+    </script>
+
+   {% endblock javascript %}
+
+  
+  
+

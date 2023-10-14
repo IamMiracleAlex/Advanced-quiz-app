@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/process.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+{% endblock extrastyle %}
+
+{% block title %} Tracks - {% endblock title %}
+
+
+
+{% block content %}
+
+<div class="container-fluid main-view">
+
+   {% include 'partials/navbar.html' %}
+   {% include 'partials/alerts.html' %}
+
+
+   <!-- =================== Hero PAge ========================= -->
+
+
+   <div class="row">
+      <div class="col-12 section-1">
+         <h1 class="headliner">Flexible Process</h1>
+         <p class="headliner-summary">For equal opportunity and ability to start that journey, we have made <br>sure our
+            application process is flexible and accessible.</p>
+      </div>
+      <div class="col-6 offset-3" style="text-align:center;">
+         <button type="button" class="hero-btn btn btn-primary" onclick="window.location='#track-pick';">View
+            Processes</button>
+      </div>
+   </div>
+</div>
+
+<br> <br>
+
+<!--=====Hero Page Ends here======-->
+
+<section id="track-pick">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+
+            <div class="card space " data-aos="zoom-in" data-aos-duration="800">
+               <div class="row mt-4 mb-4">
+                  <div class="col-lg-3 pl-2 text-center">
+                     <img class="tracks-images" src="{% static 'img/undraw_fill_forms.svg' %}">
+                     <h4 class="mt-2"><span class="badge">1</span>Fill Application</h4>
+                  </div>
+                  <div class="col-lg-8 offset-lg-1">
+                     <div class="pt-4">
+                        <h4 style="color:#2E673D">Overview</h4>
+                        <p>This is the first step in the process, and gives you an opportunity to tell us all about
+                           yourself.
+                        </p>
+                        <button type="button" class="btn apply-land" data-toggle="modal"
+                           data-target="#application">LEARN MORE</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+            <div class="card space " data-aos="zoom-in" data-aos-duration="800">
+               <div class="row mt-4 mb-4">
+                  <div class="col-lg-3 pl-2 text-center">
+                     <img class="tracks-images" src="{% static 'img/undraw_online_test.svg' %}">
+                     <h4 class="mt-2"><span class="badge">2</span>Take Assessment</h4>
+
+                  </div>
+                  <div class="col-lg-8 offset-lg-1">
+                     <div class="pt-4">
+                        <h4 style="color:#2E673D">Overview</h4>
+                        <p>Our assessments are unique to EduBridge Academy and helps us determine if the Career
+                           Acceleration is a good fit for you.
+                        </p>
+                        <button type="button" class="btn apply-land" data-toggle="modal" data-target="#assessment">LEARN
+                           MORE</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+            <div class="card space " data-aos="zoom-in" data-aos-duration="800">
+               <div class="row mt-4 mb-4">
+                  <div class="col-lg-3 pl-2 text-center">
+                     <img class="tracks-images" src="{% static 'img/undraw_job_offers.svg' %}">
+                     <h4 class="mt-2"><span class="badge">3</span>Get Seletced</h4>
+
+                  </div>
+                  <div class="col-lg-8 offset-lg-1">
+                     <div class="pt-4">
+                        <h4 style="color:#2E673D">Overview</h4>
+                        <p>Congratulations! We look forward to welcoming you to the EduBridge Academy.
+                        </p>
+                        <button type="button" class="btn apply-land" data-toggle="modal" data-target='#selection'>LEARN
+                           MORE</button>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+            <div class="card space " data-aos="zoom-in" data-aos-duration="800" >
+               <div class="row mt-4 mb-4">
+                  <div class="col-lg-3 pl-2 text-center">
+                     <img class="tracks-images" src="{% static 'img/undraw_receipt.svg' %}">
+                     <h4 class="mt-2"><span class="badge">4</span>Make Payment</h4>
+                  </div>
+                  <div class="col-lg-8 offset-lg-1">
+                     <div class="pt-4">
+                        <h4 style="color:#2E673D">Overview</h4>
+                        <p>At this stage, we'd like you to make payment to secure your spot after passing the assessment
+                           test.
+                        </p>
+                        <button type="button" class="btn apply-land" data-toggle="modal" data-target='#payment'>LEARN
+                           MORE</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+
+
+
+
+         </div>
+      </div>
+   </div>
+</section>
+
+
+<!-- ========================== Testimony section ==================================   -->
+
+<section style="padding:10% 0 5% 0;">
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <h2 class="testimony-header">An experience everyone loves to talk <br>about!</h2>
+         </div>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-duration="1000">
+         <div class="col-10 col-lg-3 offset-1 test-cards-2">
+            <img src="{% static 'img/test_img.png' %}" class="test-img-2">
+            <p class="quote-sign">"</p>
+            <p class="mt-5 mb-5">No applications or<br> experience required.</p>
+            <strong class="test-name">Adesewa Olujimi</strong>
+         </div>
+         <div class="col-10 col-lg-3 offset-1 test-cards-2">
+            <img src="{% static 'img/test_img.png' %}" class="test-img-2">
+            <p class="quote-sign">"</p>
+            <p class="mt-5 mb-5">No applications or<br> experience required.</p>
+            <strong class="test-name">Adesewa Olujimi</strong>
+         </div>
+         <div class="col-10 col-lg-3 offset-1 test-cards-2">
+            <img src="{% static 'img/test_img.png' %}" class="test-img-2">
+            <p class="quote-sign">"</p>
+            <p class="mt-5 mb-5">No applications or<br> experience required.</p>
+            <strong class="test-name">Adesewa Olujimi</strong>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- Modals -->
+<div class="modal" id="application">
+   <div class="modal-dialog  modal-lg modal-dialog-centered">
+      <div class="modal-content modal-confirm">
+
+         <div class="modal-body">
+            <div class="modal-header">
+               <h4 class="modal-title">APPLICATION</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               <p class="modal-text">
+                  If you are already a registered candidate, please log in using previously created login information.
+                  Forgot your login information?
+                  Recover your login data by clicking on the link available for this purpose under the login fields.</p>
+               <br>
+               <h5>PERSONAL INFORMATION</h5>
+               Enter your personal information (name, address, phone number, email, etc.).
+               <br><br>
+               <h5>EDUCATION</h5>
+               Add your education information. You will be asked to enter your school, major, and education level.
+               <br><br>
+               <h5>SKILLS & QUALIFICATIONS</h5>
+               Questions that ask about your skills, qualifications and certifications.
+               <br><br>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>
+<div class="modal" id="assessment">
+   <div class="modal-dialog  modal-lg modal-dialog-centered">
+      <div class="modal-content modal-confirm">
+         <div class="modal-header">
+            <h4 class="modal-title">ASSESSMENT</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+         <div class="modal-body">
+            <p class="modal-text">
+               EduBridge Academy uses online assessments to measure skills and abilities that generally do not emerge
+               from interviews. These assessments are critical, as they help determine your potential
+               for success as a Career Acceleration Program Participant. </p>
+            <br><br>
+            <h5>ADDITIONAL IMPORTANT INFORMATION:</h5>
+            <ul>
+               <li>Our Assessments are delivered online which allows 24/7 access and are fully mobily enabled.</li>
+               <li>The assessments require sustained concentration and reading to complete.</li>
+               <li> These assessments may be challenging, so please be sure to take them seriously and complete them in
+                  a space void of distractions.</li>
+               <li> The assessment is timed. So, please make sure you take your time and complete any assessment
+                  provided to you in an atmosphere that allows you to be comfortable and concentrate fully.
+            </ul>
+         </div>
+
+      </div>
+   </div>
+</div>
+
+<div class="modal" id="payment">
+   <div class="modal-dialog  modal-lg modal-dialog-centered">
+      <div class="modal-content modal-confirm">
+         <div class="modal-header">
+            <h4 class="modal-title">PAYMENT</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+         <div class="modal-body">
+            <p class="modal-text">
+               Successful candidates who passess the assesment stage and gets selected will be required to make payments
+               to continue with the final application process.
+               The Career Acceleration Program costs <strong>NGN 50,000</strong>.
+            </p>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal" id="selection">
+   <div class="modal-dialog  modal-lg modal-dialog-centered">
+      <div class="modal-content modal-confirm">
+         <div class="modal-header">
+            <h4 class="modal-title">GET SELECTED</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </div>
+         <div class="modal-body">
+            <p class="modal-text">
+               Congratulations! You've proven you have a lot to offer. We look forward to welcoming you to the Career
+               Acceleration Program, where you will work, learn and
+               grow alongside highly talented people, face new and exciting challenges and take on industry designed
+               projects.</p>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Modals -->
+{% include 'partials/footer.html' %}
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+{% endblock javascript %}

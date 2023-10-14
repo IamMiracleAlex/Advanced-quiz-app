@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+  
+ {% load static %}
+
+      
+   {% block extrastyle %}
+   
+   <link rel="stylesheet" type="text/css" href="{% static 'css/assessment_process.css' %}">
+   {% endblock extrastyle %}
+        
+      {% block title %} Take Assessment - {% endblock title %}
+        
+
+    {% block content %}
+
+{% include 'partials/other_navbar.html' %}
+{% include 'partials/alerts.html' %}
+ 
+
+      
+      
+         <section>
+            <br>
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-3">
+                     <p>Hello {{request.user}},</p>
+                     <h4>Application Process</h4>
+                  </div>
+                  <div class="col-lg-8">
+                     <ul class="nav nav-tabs bg-white round">
+                        <li class="nav-item navitem">
+                           <a class="nav-link disabled" href="#">Personal Information</a>
+                        </li>
+                        <li class="nav-item navitem">
+                           <a class="nav-link active" href="#">Assessment Process</a>
+                        </li>
+                        <li class="nav-item navitem">
+                           <a class="nav-link disabled" href="#">Resources</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+
+        
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-12 col-lg-10 offset-lg-1 cust-card">
+                    <div class = "row">
+                        <div class = "col-lg-12 card-tabs" >
+                        Situational Judgment & Case Study
+                  </div>
+               
+               </div>
+                    <div class = "row" style = "text-align:center; padding-top:10%; font-size:20px;">
+                        <div class = "col-12 col-lg-2 offset-lg-2 pb-4">
+                            <img src = "{% static 'img/clock.png' %}" width="30px" height="30px"/><br><br>
+                            <strong>15 minutes</strong>
+                        </div>
+                        <div class = "col-12 col-lg-3 offset-lg-1 pb-4">
+                            <img src = "{% static 'img/question.svg' %}" width="30px" height="30px"/><br><br>
+                        <strong>10 questions</strong>
+                        </div>
+                        <div class = "col-12 col-lg-2 offset-lg-1 pb-4">
+                            <img src = "{% static 'img/points.svg' %}" width="30px"  height="30px"/><br><br>
+                        <strong>10 points</strong>
+                        </div>
+                    </div>
+                    <div class = "row" style = "text-align:justify; padding-top:5%; font-size:18px;">
+                        <div class = "col-10 offset-1">
+
+                            This test will be used to evaluate your analytical skills and measure your level of attention to details. <strong>Please follow the instructions below </strong>
+                            <br> 
+
+                            <p>On completing the test, you will receive a mail with details on how to proceed.
+                            </p>
+                        
+                            <p>
+                            Please use the email address you used in registration
+                            </p>
+                          
+
+                        </div>
+                        <div class = "col-lg-12 text-center mt-3 mb-4">
+                            <button type = "button" onclick="window.location='{% url 'assessments:quiz_list' %}'"; class="btn start-btn">START TEST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        
+        {% endblock content %}
+
+         

@@ -1,0 +1,17 @@
+Dear {{ first_name }},
+
+We would like to congratulate you; you have been accepted into the EduBridge Career Acceleration Program. 
+
+As stated previously, the program costs NGN 50,000, begins on the {{program_date}}, and lasts for 6-weeks. 
+
+Payments can be made here or through https://flutterwave.com/pay/edubridgecap or a bank transfer can be made to Edubridge Academy International Ltd 0237541234 GTBank Plc. 
+
+There are pre-program tasks such as writing a CV, strengths and weaknesses assessments, and other technical materials required to be completed before the beginning of the program - we would provide you with guiding materials once you are enrolled. 
+
+For installment payments or further inquiries please reach out to cap@edubridgeacademy.com 
+
+If you have any questions do let us know and, again, congratulations!
+
+Best regards, 
+
+The Career Acceleration Program Team

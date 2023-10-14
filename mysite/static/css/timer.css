@@ -1,0 +1,19 @@
+.timer, .timer-done, .timer-loop {
+    font-size: 25px;
+    padding: 5px;
+  }
+  .jst-hours {
+    float: left;
+  }
+  .jst-minutes {
+    float: left;
+  }
+  .jst-seconds {
+    float: left;
+  }
+  .jst-clearDiv {
+    clear: both;
+  }
+  .jst-timeout {
+    color: red;
+  }

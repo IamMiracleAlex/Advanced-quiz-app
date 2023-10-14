@@ -1,0 +1,15 @@
+Dear {{ first_name }},
+
+
+We were all very excited to meet with you over the past few days. We have been impressed with your background and career objectives.
+
+However, we have had several exciting applications and would not be moving forward with your application at this time. 
+
+You may always apply for the next program or any of our programs.
+
+Hope to see you soon.
+
+
+Kind regards, 
+
+Career Acceleration Program Team

@@ -1,0 +1,28 @@
+ {% extends 'admin/base.html' %}
+
+{% block title %} EduBridge Academy - Admin Site {% endblock title %}
+
+ {% load static %}
+
+ {% block branding %}
+
+    <h1 id="head" >
+      <a href="{% url 'admin:index' %}">
+         <em style="font-size: 2.5rem; font-weight: bolder; margin-right:3rem; color: white;">EduBridge
+         </em>
+      </a>  
+    </h1>
+    
+ {% endblock branding %}
+
+ {% block extrastyle %}
+
+  <link rel="icon" href="{% static 'img/edu_logo_black.png' %}" type="image/x-icon">
+   
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+
+{% endblock extrastyle %}
+
+
+
+ {% block nav-global %}{% endblock %}

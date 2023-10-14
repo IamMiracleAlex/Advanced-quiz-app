@@ -1,0 +1,25 @@
+<div id='form-cover'>
+
+    {% if form.errors %}
+        <div id="message" class="container">
+        <div class="alert alert-danger alert-dimissible text-center" role="alert">
+            <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+            <p>Please select an answer</p>
+        </div>
+        <br>
+            </div>
+    {% endif %}
+
+
+        <p class='text-justify'> {{ question.text|safe }} </p>
+
+
+        <br>
+
+        <form id='form' action="{% url 'assessments:take_quiz' quiz.pk %}" method="post" novalidate>
+            {% csrf_token %}
+            {{ form }}
+            <button id='submit-btn' type="submit" class="btn btn-primary">Next →</button>
+        </form>
+
+</div>

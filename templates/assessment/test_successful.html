@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+  
+ {% load static %}
+
+      
+   {% block extrastyle %}
+   
+   <link rel="stylesheet" type="text/css" href="{% static 'css/assessment_process.css' %}">
+   {% endblock extrastyle %}
+        
+      {% block title %} Assessment has been submitted - {% endblock title %}
+        
+
+    {% block content %}
+            
+         <section>
+            <br> <br>
+
+        
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-lg-8 col-sm-10 mx-auto ">
+                    <div class = "row">
+                        
+                     <div class="modal-content modal-confirm">
+                
+                        <div class="modal-body">
+                            <p class="modal-text text-center">ASSESSMENT HAS BEEN SUCCESSFULLY SUBMITTED</p>
+                            <p class="text-center">Please check your email address for the next step of the application process</p>
+                        </div>
+                        <div class = "row">
+                           
+                            <div class = "col-10 offset-1 text-center">
+                                    <button onclick="window.location='{% url 'index' %}';" type = "button" class="btn confirm-btns" style="background-color:#4DE897;">GO TO HOMEPAGE</button>
+                            </div>
+                                
+                        </div>
+                      </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+        <br> <br><br> <br>
+    </section>   
+        {% endblock content %}
+
+         

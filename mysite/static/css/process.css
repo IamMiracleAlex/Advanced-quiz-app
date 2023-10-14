@@ -1,0 +1,145 @@
+
+body {
+   font-family: 'M PLUS 1p', sans-serif;
+   
+   overflow-x:hidden; 
+   color: black;
+   font-weight: 500;
+   line-height: 2;
+}
+html{
+ scroll-behavior: smooth;
+}
+ 
+
+   /* ======== Hero Page ================= */
+.main-view {
+   background-image: url('../img/tracks_hero_bg.png');
+   background-position: top left;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   height:100vh;
+}
+
+.section-1{
+   padding-top:10%;
+}
+.headliner{
+   color:#2E673D;
+   font-weight:900;
+   font-size:60px;
+   text-align:center;
+}
+
+.headliner-summary{
+ margin-top:1%;
+ text-align:center;
+ font-weight:500;
+ font-size:18px;
+}
+
+.hero-btn{
+   background-color:#2E673D; 
+   border:0px;
+   }
+   .hero-btn:hover{
+       background-color:white;
+       color:#2E673D;
+       border:3px solid #2E673D;
+     }
+/* ============ Hero Page Ends Here ================== */
+
+
+
+
+/* ================== Process section =========================== */
+
+.track-button {
+   background-color: #2E673D;
+   color: WHITE;
+   padding: .4rem 1.7rem;
+   font-size: 1.2rem;
+}
+.space {
+   margin-top: 5rem;
+   padding: 2rem;
+}
+
+.tracks-images{
+ max-width:200px;
+ max-height:200px;
+}
+.apply-land{
+ padding:3% 10% 3% 10%; 
+ color:white; 
+ font-weight:800; 
+ background-color:#2E673D;
+ width:250px;
+}
+.apply-land:hover{
+ background-color:rgba(232, 241, 234, 0);
+ color:#2E673D;
+ border:1px solid #2E673D;
+} 
+
+/* ================== Tracks section ends here =========================== */
+
+
+
+
+/* ================== Testimony section =========================== */
+
+.testimony-header{
+ font-size:35px;
+ font-weight:800;
+ text-align:center;
+ margin-bottom:70px;
+}
+.test-cards-2{
+ border: 1px solid #CFCFCF;
+ box-sizing: border-box;
+ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+ border-radius: 16px;
+ text-align: center;
+ padding-bottom: 2%;
+ margin-bottom:20%;
+}
+
+.test-img-2{
+ height:150px;
+ width:150px;
+ position:relative;
+ top:-50px;
+}
+.test-name{
+ color:#60C27A;
+ font-size:18px;
+}
+.quote-sign{
+ font-family:Impact;
+ font-style: normal;
+ font-size:180px;
+ color:#7FE59E;
+ position:absolute;
+ top: -10%;
+ left: 38%;
+}
+/* ============== Testimony section ends here ================= */
+
+
+
+
+/* =========================== MEDIA QUERIES ================================ */
+
+@media(max-width: 767px) {
+   .track-button {
+       margin-bottom: 2rem;
+   }
+   .headliner {
+     color: #2E673D;
+     font-weight: 700;
+     font-size: 40px;
+     text-align: center;
+ }
+}
+

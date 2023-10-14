@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block extrastyle %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/application_p_info.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker3.standalone.css' %}">
+{% endblock extrastyle %}
+
+{% block title %} Application - {% endblock title %}
+
+
+{% block content %}
+
+
+   {% include 'partials/other_navbar.html' %}
+   {% include 'partials/alerts.html' %}
+
+
+
+
+
+<section>
+   <br>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3">
+            <p>Hello {{user.username}},</p>
+            <h4>Application Process</h4>
+         </div>
+         <div class="col-lg-8">
+            <ul class="nav nav-tabs bg-white round">
+               <li class="nav-item navitem">
+                  <a class="nav-link active" href="#">Personal Information</a>
+               </li>
+               <li class="nav-item navitem">
+                  <a class="nav-link disabled" href="#">Assessment Process</a>
+               </li>
+               <li class="nav-item navitem">
+                  <a class="nav-link disabled" href="#">Resources</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+
+      <br>
+
+
+      <div class="row bg-white round shadow-lg">
+         <div class="col-lg-12 ">
+            <ul class="nav nav-pills mb-3 offset-1 tracks-top" id="pills-tab" role="tablist">
+               <!-- <li class="nav-item">
+                     <a class="nav-link tracks-header active first" id="pills-home-tab" data-toggle="pill"
+                        href="#resume" role="tab" aria-controls="resume" aria-selected="false">Resume</a>
+                  </li> -->
+               <li class="nav-item">
+                  <a class="nav-link tracks-header second disabled" id="personal_info-tab" data-toggle="pill"
+                     href="#personal_info" role="tab" aria-controls="personal_info" aria-selected="true">Personal
+                     Information</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link tracks-header third active" id="pills-contact-tab" data-toggle="pill"
+                     href="#education" role="tab" aria-controls="education" aria-selected="false">Education</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link tracks-header fourth disabled" id="pills-skillsandothers-tab" data-toggle="pill"
+                     href="#skillsandothers" role="tab" aria-controls="pills-skillsandothers"
+                     aria-selected="true">Skills & Others</a>
+               </li>
+            </ul>
+
+
+
+         {% if form.errors %}
+            {% for field in form %}
+            {% for error in field.errors %}
+
+
+            <div id="message" class="container">
+               <div class="alert alert-danger alert-dimissible text-center" role="alert">
+                  <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+                  <p>{{ error|escape }}</p>
+               </div>
+            </div>
+
+
+            {% endfor %}
+            {% endfor %}
+
+            {% for error in form.non_field_errors %}
+            <div id="message" class="container">
+               <div class="alert alert-danger alert-dimissible text-center" role="alert">
+                  <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+                  <p>{{ error|escape }}</p>
+               </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+
+
+
+
+
+            <form id="form" class="form" action="{% url 'apply_edu' %}" method="POST">
+                  {% csrf_token %}
+               <div class="tab-content" id="pills-tabContent">
+
+
+                
+
+                  <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
+
+
+                     <div style="width: 95%" class="mx-auto pl-4 pr-4">
+                        <br>
+                        <h5 class="text-left pl-1 font-weight-bolder">RECENT EDUCATION</h5>
+
+                        <br> <br>
+
+                        <div class="row">
+                           <div class="col-lg-3">
+                              <div class="form-group">
+                                 <h5 class="">Academic Details</h5>
+
+                              </div>
+                           </div>
+
+                           <div class="col-lg-6">
+                              <div class="form-group">
+                                 <label for="inst_name"><span class="comp">* </span>Institution's name</label>
+                                 <!-- <input type="text" class="form-control scnd_form" name="inst_name"
+                                    data-validation="required"> -->
+                                    {{ form.institut_name }}
+                              </div>
+                           </div>
+                           <div class="col-lg-3">
+                            <div class="form-group">
+                               <label for="degree"><span class="comp">* </span>Degree type</label>
+                              
+                               {{ form.degree_type }}
+                            </div>
+                         </div>
+
+
+                        </div>
+                        <br> <br>
+
+                        <div class="row">
+                           <div class="col-lg-3">
+                              <div class="form-group">
+                                 <!-- <h5>Duration</h5> -->
+                              </div>
+                           </div>
+
+                           <div class="col-lg-9">
+                              <div class="row">
+                                 <div class="col-lg-4">
+                                    <div class="form-group">
+                                       <label for="adm_year"><span class="comp">* </span>Admission year</label>
+                                       
+                                          {{ form.admission_year }}
+                                    </div>
+                                 </div>
+
+                                 <div class="col-lg-4">
+                                    <div class="form-group">
+                                       <label for="grad_year"><span class="comp">* </span>Graduation year</label>
+                                      
+                                          {{ form.graduation_year }}
+                                    </div>
+                                 </div>
+
+                                 <div class="col-lg-4">
+                                    <div class="form-group">
+                                       <label for="nationality"><span class="comp">*
+                                          </span>Course or Specialization</label>
+                                    
+                                          {{ form.course }}
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </div>
+                        </div>
+
+
+                        <br> <br>
+                        
+                 
+                              <div class="text-right mr-3">
+                                 <br> <br>
+                                 <button type="button" onclick="window.history.back()"
+                                 class="btn pr-5 pl-5 mt-3 font-weight-bold bg-secondary text-white">
+                                 PREVIOUS
+                              </button>
+                                 <button type="submit" class="btn pr-5 pl-5 mt-3 font-weight-bold submit-btn next3">
+                                    CONTINUE
+                                 </button>
+                              </div>
+
+                              <br> <br>
+                           
+
+                     </div>
+                  </div>
+
+              
+
+                       
+            </form>
+         </div>
+      </div>
+
+
+
+</section>
+
+
+
+<br> <br> <br> <br>
+
+
+{% endblock content %}
+
+
+{% block javascript %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="{% static 'js/application_p_info.js' %}"></script>
+
+<script>
+   $.validate({
+      modules: 'date'
+   });
+</script>
+<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+<script>
+   $('.datepicker').datepicker({
+   });
+</script>
+ <script>
+    $(document).on('submit', '#form', function(e){
+        $('.submit-btn').html('<i class="fa fa-spinner fa-spin"></i> Loading');
+    });
+ </script>
+
+     
+
+{% endblock javascript %}

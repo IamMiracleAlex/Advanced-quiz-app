@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block extrastyle %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/login_signup.css' %}">
+{% endblock extrastyle %}
+
+{% block title %} Email Confirmed {% endblock title %}
+
+
+
+
+
+{% block content %}
+
+
+<section>
+
+   {% include 'partials/other_navbar.html' %}
+   {% include 'partials/alerts.html' %}
+
+   <br> <br>
+
+   <div class="container">
+      <div class="row ">
+         <div class="col-lg-7 col-sm-10 p-5 shadow-lg mx-auto rounded-lg">
+            <h4 class="text-center font-weight-bolder">Login to continue</h4>
+            <br>
+            <div class="text-center">
+            <img  src="{% static 'img/verify_icon.svg' %}" width="70px" height="70px" />
+            </div>
+            <br>
+            <div class="text-center mt-3">
+               Your email has been verified.
+               <br>
+               Login to continue with application.
+               <br> <br>
+               <button type="submit" class="btn pr-5 pl-5 font-weight-bold submit-btn" onclick="window.location='{% url 'account_login' %}?next=/apply';" >
+                  LOGIN
+               </button>
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+   <br> <br> <br>
+
+</section>
+
+{% endblock content %}
+

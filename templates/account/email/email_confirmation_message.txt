@@ -1,0 +1,16 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+
+Dear applicant,
+
+Thank you for your interest in EduBridge Career Acceleration Program.
+
+Please confirm your email address by clicking the link below.
+
+ {{ activate_url }}
+{% endblocktrans %}
+
+We may need to send you critical information about our service and it is important that we have an accurate email address.
+
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you! {{ site_name }} Team.
+{{ site_domain }}{% endblocktrans %}
+{% endautoescape %}

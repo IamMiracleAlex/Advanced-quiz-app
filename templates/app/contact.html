@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+
+{% endblock extrastyle %}
+
+{% block title %} Contact Us - {% endblock title %}
+
+
+{% block content %}
+
+<div class="container-fluid main-view">
+
+   {% include 'partials/navbar.html' %}
+   {% include 'partials/alerts.html' %}
+
+
+   <!-- =================== Hero PAge ========================= -->
+
+
+   <div class="row">
+    <div class="col-12 section-1">
+       <h1 class="headliner">Contact Us</h1>
+       <p class="headliner-summary">We’re here to help and answer any question you might have. <br> We look forward to hearing from you 🙂</p>
+    </div>
+    <br>
+    <div class="col-6 offset-3" style="text-align:center;">
+       <button type="button" class="hero-btn btn btn-primary" onclick="window.location='#contactform';">GET IN TOUCH</button>
+    </div>
+ </div>
+</div>
+
+<br> <br>
+
+
+
+
+        <section id="contactform">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-sm-10 p-5 shadow rounded-lg mx-auto" data-aos="zoom-in" data-aos-duration="800">
+                      <h5 style=" text-align:center;">WE WILL LOVE TO HEAR FROM YOU</h5>
+                      <hr>
+                      <br>
+                      <br>
+
+                        <form id="form" action='{% url 'contact' %}' method="POST" >
+                        {% csrf_token %}
+                            <div class="form-group">
+                                <label for="Fullname"><span class="comp">*</span> Full Name</label>
+                                <input type="text" class="form-control scnd_form" id="fullname" name="fullname" required >
+                                </div>
+                                <br> 
+
+                                <div class="form-group">
+                                    <label for="email"><span class="comp">*</span> Email</label>
+                                    <input type="email" class="form-control scnd_form" name="email" required >
+                                </div>
+                                <br>
+                            
+                                  <div class="form-group">
+                                    <label for="number"><span class="comp">*</span> Phone Number</label>
+                                    <input type="text" class="form-control scnd_form" name="phone" required >
+                                </div>
+              
+                                <br>
+                                
+                                    <div class="form-group">
+                                      <label for="msg">Your Message</label>
+                                      <!-- <input type="text" class="form-control scnd_form"  name="message"> -->
+                                      <textarea class="form-control scnd_form" name="message" id="" cols="30" rows="3"></textarea>
+        
+                                    </div>
+                            
+                                
+                                <div class="text-center mt-5">
+                                    <button id="my-form-button" style="background: #C6F4D7;" type="submit" class="btn pr-5 pl-5 font-weight-bold" >
+                                        SUBMIT
+                                    </button>
+                                </div>
+                                <p class="text-center bg-success text-white" id="my-form-status"></p>
+                            </form>
+
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+                <br><br>
+            </section>
+<br>
+<br>
+ <br>
+ <br>
+
+{% include 'partials/footer.html' %}
+
+
+{% endblock content %}
+
+
+{% block javascript %}
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+$(document).on('submit', '#form', function(e){
+    var form = $(this);
+ 
+        $.ajax({
+            url: '{% url 'contact' %}',
+            data: form.serialize(),
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if (data.success) {
+                    swal("Good job!", "You clicked the button!", "success");
+                    swal({
+                        title: "Message Delivered!",
+                        text: data.success,
+                        icon: "success",
+                        button: "Done!",
+                    });
+
+                    document.getElementById("form").reset();
+                }
+        }
+
+    })
+    return false;
+
+    });
+    </script>
+{% endblock javascript %}

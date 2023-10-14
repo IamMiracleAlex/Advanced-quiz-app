@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+{% load socialaccount %}
+      
+   {% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_signup.css' %}">
+   {% endblock extrastyle %}
+        
+      {% block title %} Sign Up - {% endblock title %}
+
+
+
+      
+
+{% block content %}
+
+
+      <section >
+         
+            
+         <a class="navbar-brand mt-3 ml-5" href="{% url 'index' %}">
+            <img src="{% static 'img/edu_logo_black.png' %}" class="img img-fluid"
+               height="65px" width="115px">
+         </a>
+
+         {% include 'partials/alerts.html' %}
+
+         <br> 
+
+         <div class="container">
+            <div class="row ">
+               <div class="col-lg-6 col-sm-10 p-5 shadow-lg mx-auto rounded-lg">
+                  <h4 class="text-left font-weight-bolder">Let's get to know you!</h4>
+                  <br> 
+
+                    <p>{% with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
+                     {{site_name}}. <br> As a final step, please complete the following form:
+                     {% endwith %}
+                     </p>
+
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+
+
+        <div id="message" class="container">
+           <div class="alert alert-danger alert-dimissible text-center" role="alert">
+              <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+              <p>{{ error|escape }}</p>
+           </div>
+        </div>
+
+        {% endfor %}
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        <div id="message" class="container">
+           <div class="alert alert-danger alert-dimissible text-center" role="alert">
+              <button class="close" data-dismiss="alert"> <span aria-hidden="true">&times;</span></button>
+              <p>{{ error|escape }}</p>
+           </div>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+        
+        <br>
+
+                  <form id="signup_form" action="{% url 'socialaccount_signup' %}" method="POST">
+                        {% csrf_token %}
+                     
+                  <div class="row" style="padding-bottom:20px;">
+                  
+                     <div class="col-lg-12">
+                        <div class="form-group"> 
+                           <label for="title"><span class="comp">* </span>Email</label>
+                           {{ form.email|add_attr:"class:form-control scnd_form,data-validation:email,placeholder: " }} 
+                           
+                        </div>
+                     </div>
+
+                     </div>
+   
+                     <div class="text-center mt-3">
+                       
+
+                          <button type="submit" class="btn pr-5 pl-5 font-weight-bold submit-btn" >SIGN UP</button> 
+
+                        <br> <br>
+                        <p>Already have an account? <a href="{% url 'account_login' %}">Login</a></p>
+                     </div>   
+
+                  </form>
+                   
+                     <br>
+                  </div>
+
+
+               </div>
+
+            </div>
+
+
+
+         <br> <br> <br>
+
+      
+      </section>
+
+      {% endblock content %}
+  
+   
+   {% block javascript %}
+    <script>
+      $(document).on('submit', '#signup_form', function(e){
+    $('.submit-btn').html('<i class="fa fa-spinner fa-spin"></i> Loading');
+    });  
+    </script>
+
+   {% endblock javascript %}
+
+  
+  
+

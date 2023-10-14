@@ -1,0 +1,90 @@
+/* ======================== general ============================= */
+
+body {
+    font-family: 'M PLUS 1p', sans-serif;
+    overflow-x:hidden; 
+    color: black;
+    font-weight: 500;
+    line-height: 2;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.b_color {
+  color: #2E673D;
+}
+.space{
+ padding: 10px 20px !important;
+}
+
+
+/* ======== Landing Page ================= */
+.main-view {
+    background-image: url('../img/faqs/faq_hero.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+input[type=text]{    
+    background: url("../img/faqs/faq_search_icon.png") no-repeat;
+    background-position: 10px 12px;
+    background-size: auto 50%;
+    height: 33%;
+    padding: 12px 20px;
+    padding-left: 5%;
+    outline: none;
+    border: 2px solid #4CE895;
+    }
+
+.faq-head{
+    font-size: 3.5rem;
+    color:  #2E673D;
+    font-weight:1000;
+    line-height:150%;
+}
+
+/* ======== Landing Page Ends Here ================= */
+ 
+
+
+/* =========================== FAQS section =============================== */
+
+  .common{
+   border: 1px solid #28a745;
+   margin-bottom: .8rem;
+   border-radius: 10px !important;
+   background-color: #fff;
+  }
+  
+  .accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "\f068";
+    float: right;
+  }
+  .accordion .card-header.collapsed:after {
+    font-family: 'FontAwesome';
+    float: right;
+    content: "\f067";
+  }
+[data-toggle~="collapse"] {
+    cursor: pointer;
+}    
+
+
+ /* ======================== MEDIA QUERIES ====================     */
+
+
+ 
+/*    ======================= Mobile View ========================= */
+
+@media(max-width: 767px) {
+.faq-head {
+  font-size: 2rem;
+}
+input[type=text]{    
+    padding-left: 15%;
+    width: 90% !important;
+    }
+   
+}   

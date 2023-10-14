@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+  
+ {% load static %}
+
+
+      
+   {% block extrastyle %}
+   
+   <link rel="stylesheet" type="text/css" href="{% static 'css/assessment_process.css' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/timer.css' %}">
+   <style>
+        #id_answer li {
+            list-style-type: none;
+        }
+   </style>
+   {% endblock extrastyle %}
+        
+      {% block title %} Take Assessment - {% endblock title %}
+        
+
+    {% block content %}
+
+    {% include 'partials/other_navbar.html' %}
+        
+      
+    <section>
+        <br>
+
+        <div class="container">
+            <div class="row ">
+            <br>
+                     
+            <div id="quiz-cover" class="col-lg-7 col-sm-10 p-5 shadow-lg mx-auto rounded-lg">
+
+            <div class=" text-primary timer" data-seconds-left="{% widthratio 60 1 quiz.time %}"></div>
+
+                    <br>
+
+                {% include 'assessment/partials/quiz_form.html' %}
+                
+            </div>
+            </div>
+       </div> 
+
+       <br> <br> <br> <br>
+
+    </section>
+        
+        {% endblock content %}
+
+        {% block javascript %}
+        <script src="{% static 'js/jquery.simple.timer.js' %}"></script>
+        <script>           
+                $(function(){
+                $('.timer').startTimer({
+                onComplete: function(){
+                    console.log('Complete');
+                    $.ajax({
+                        url: '{% url "assessments:take_quiz" quiz.pk %}',
+                        data: {'time_up': 'true'},
+                        type: 'get',
+                        dataType: 'json',
+                        beforeSend: function(){
+                            $('#form-cover').html('<div class="text-center text-primary" style="height:75vh;"><h2>Time Up!! Submitting...</h2></div>')
+
+                        },
+                        success: function (data) {
+                         $('#quiz-cover').html(data.html_form);
+                
+                        }
+                    })
+                }
+                });
+            }) 
+        </script>
+        <script>
+            $(document).on('submit', '#form', function(e){
+                var form = $(this);
+
+                    $.ajax({
+                        url: form.attr("action"),
+                        data: form.serialize(),
+                        type: form.attr("method"),
+                        dataType: 'json',
+                        beforeSend: function(){
+                            $('#form-cover').html('<div class="text-center text-primary" style="height:75vh;"><h2>Hang on!! Submitting...</h2></div>')
+                            
+                        }, 
+                        success: function (data) {
+                            if (data.recorded) {
+                                $('#quiz-cover').html(data.html_form);
+
+                            } else {
+                                $('#form-cover').html(data.html_form);
+                            }
+                        }
+                    })
+                    return false;
+                });
+        </script>
+        
+     {% endblock javascript %}
+
+         

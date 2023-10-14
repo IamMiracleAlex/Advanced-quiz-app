@@ -1,0 +1,19 @@
+django==2.2.8           #django
+pytz==2019.3            #django
+sqlparse==0.3.0         #django
+certifi==2020.4.5.1         #allauth
+chardet==3.0.4              #allauth
+defusedxml==0.6.0           #allauth
+django-allauth==0.41.0      #allauth
+idna==2.9                   #allauth
+oauthlib==3.1.0             #allauth
+python3-openid==3.1.0       #allauth
+requests==2.23.0            #allauth
+requests-oauthlib==1.3.0     #allauth
+urllib3==1.25.9             #allauth
+django-appconf==1.0.4           #pinax referrals
+# git+https://github.com/pinax/pinax-referrals      #pinax referrals
+cloudinary==1.21.1                              #cloudinary
+django-cloudinary-storage==0.2.3                #cloudinary
+django-ckeditor==5.9.0                          #ckeditor
+django-js-asset-1.2.2                           #ckeditor

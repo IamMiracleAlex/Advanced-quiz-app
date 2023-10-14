@@ -1,0 +1,16 @@
+New Form Submission From CAP Website.
+
+
+Please find the details of the form below:
+
+Full Name:  {{fullname}}.
+
+Phone Number:  {{phone}}. 
+
+Email Address:  {{email}}.
+
+Message:  {{message}}  
+
+
+
+Submitted on:  {{time}}"

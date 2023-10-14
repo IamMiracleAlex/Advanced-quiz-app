@@ -1,0 +1,188 @@
+/* ================= Navbar =============== */
+#myNav {
+display: none;
+}
+#mb-nav{display:none;}
+#toggler {
+display: none;
+}
+.overlay {
+display: none;
+}
+
+.list-group-item:hover {
+text-decoration: underline;
+}
+
+.list-group li {
+font-size: 12px;
+background-color: #000000;
+color: #FF9D00;
+text-decoration: underline;
+}
+
+.list-group {
+padding-right: 12%;
+text-align: right;
+float: right;
+}
+
+
+
+#join-btn {
+background-color: #016938;
+padding: 1px 15px 1px 15px;
+border: 0px;
+color: white;
+font-weight: 900;
+position:relative;
+top:8px;
+}
+
+#join-btn:hover {
+background-color: rgb(3, 102, 3);
+}
+
+.nav_ {
+padding-left: 5%;
+padding-right: 5%;
+}
+
+#myNavbar a {
+color: black;
+}
+
+#myNavbar a:hover {
+color: #FF9D00;
+padding-bottom: 10px;
+border-bottom: 2px solid #FF9D00;
+}
+
+.nav-item {
+margin-left: 12px;
+font-size: 14px;
+color: black;
+}
+
+#lin:hover {
+padding-bottom: 10px;
+border-bottom: 1px solid #FF9D00;
+}
+
+.login_out a {
+text-decoration-line: none;
+}
+  /* ==== Navbar Ends Here==== */
+
+
+
+/* ================== footer section ==================== */
+
+/* footer {
+    background: url('../img/footer.png');
+    background-size: 100% 100%;
+    padding-top: 10rem;
+} */
+footer a:hover {
+    color: #54ee54 !important;
+  }
+
+
+
+
+  /* ======================== MEDIA QUERIES ====================     */
+
+
+ /* ======== Navbar Mobile View ================= */
+@media screen and (max-width: 812px) {
+#myNav {
+display: block;
+}
+.nav_ {
+display: none;
+}
+#mb-nav{
+display:block;
+}
+h1.headliner {
+   margin-top: 100px;
+}
+#toggler {
+display: block;
+margin-top:-50px;
+margin-left:97%;
+width:15px;
+}
+.overlay {
+display: block;
+height: 0%;
+width: 100%;
+position: fixed;
+z-index: 1000;
+top: 0;
+left: 0;
+background-color: white;
+overflow-y: hidden;
+transition: 0.5s;
+}
+.overlay-content {
+position: relative;
+top: 5%;
+width: 100%;
+text-align: left;
+margin-top: 30px;
+}
+.overlay a {
+text-decoration: none;
+font-size: 20px;
+color: black;
+display: block;
+transition: 0.3s;
+padding-left: 30px;
+padding-bottom: 28px;
+font-weight: 500;
+}
+.overlay a:hover, .overlay a:focus {
+color: #3df337;
+}
+.overlay .closebtn {
+position: relative;
+right: 15px;
+font-size: 50px;
+top: -30px;
+color: #3df337;
+}
+#mb_btns {
+letter-spacing: 0.1em;
+font-size: 18px;
+font-weight: 700;
+color: white;
+padding: 5px 25px 2px 25px;
+border-radius: 0px;
+border: 0px;
+background-color: #FF9D00;
+}
+.search-box{
+width:100%;
+font-size:15px;
+}
+.section-2-head{
+text-align:left;
+}
+
+}
+
+@media screen and (max-height: 450px) {
+.overlay {
+overflow-y: auto;
+}
+.overlay a {
+font-size: 20px
+}
+.overlay .closebtn {
+font-size: 40px;
+top: 15px;
+right: 35px;
+}
+}
+/* ======== Navbar Mobile View Ends Here ================= */

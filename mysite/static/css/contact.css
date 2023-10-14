@@ -1,0 +1,131 @@
+body {
+    font-family: 'M PLUS 1p', sans-serif;
+  }
+  
+  /* ================== Landing Page ====================== */
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+
+
+   /* ======== Hero Page ================= */
+   .main-view {
+    background-image: url('../img/tracks_hero_bg.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:100vh;
+ }
+ 
+ .section-1{
+    padding-top:10%;
+ }
+ .headliner{
+    color:#2E673D;
+    font-weight:900;
+    font-size:60px;
+    text-align:center;
+ }
+ 
+ .headliner-summary{
+  margin-top:1%;
+  text-align:center;
+  font-weight:500;
+  font-size:18px;
+ }
+ 
+ .hero-btn{
+    background-color:#2E673D; 
+    border:0px;
+    }
+    .hero-btn:hover{
+        background-color:white;
+        color:#2E673D;
+        border:3px solid #2E673D;
+      }
+ /* ============ Hero Page Ends Here ================== */
+
+  
+  
+  .apply_btn a:hover {
+  color: green;
+  }
+  
+  /* ================== Landing Page Ends here ====================== */
+  
+  
+  .form-control{
+  border:0px;
+  border-bottom:1px solid green;
+  margin-top:-15px;
+  }
+  .form-control:hover{
+  border-bottom:3px solid green;
+  box-shadow:none;
+  }
+  .form-control:focus{
+  box-shadow:none;
+  }
+  .star{
+    color:red;
+    font-weight:bold;
+    font-size:17px;  
+  }
+  .submit-btn {
+    margin-top:10%;
+    position:relative;
+    left:35%;
+    letter-spacing: 0.1em;
+    font-size: 18px;
+    font-weight: 500;
+    color: #C6F4D7;
+    padding: 3px 15px 3px 15px;
+    border-radius: 0px;
+    border: 0px;
+    background-color: #2E673D;
+  }
+  label{
+      font-size:18px;
+  }
+  
+  /* =========================== Employer's Form ends here  ================== */
+  
+  
+  
+  
+  
+  .scnd_form {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #4DE897
+  }
+  .comp {
+      color: red;
+  }
+  
+    
+    
+    @media screen and (max-width: 500px) {
+      #abstract-line{
+        display:none;
+      }
+      #text-head-1{
+        font-size: 1.8em;
+        font-weight: 600;
+        color: #30233D;
+        padding-bottom:15%;
+      }
+    }
+  
+    /* for most images */
+    .round-edges {
+      border-radius: 40px;
+    }
+  
+  
+  section {
+    overflow-x: hidden;
+  }    

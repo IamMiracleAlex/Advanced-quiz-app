@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+  
+ {% load static %}
+
+        
+      {% block title %} Verification Sent - {% endblock title %}
+        
+
+    {% block content %}
+
+
+{% include 'partials/other_navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+
+
+
+  
+  <div class="container">
+      <div class="row">
+         <div class="col-lg-8 text-center mx-auto">
+         <br> <br> <br>
+             <h2 style="color:#2E673D" class="font-weight-bolder">Verify Your E-mail Address</h2>
+
+               <br>
+            <p class="w-75 text-center mx-auto">
+            We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please <a href="{% url 'contact' %}" target="_blank" rel="noopener noreferrer">contact us</a> if you do not receive it within a few minutes.
+            </p>
+               <br>
+            <p class="w-75 text-center mx-auto">You can also click <a href="/accounts/email/">here</a> to resend the email, add new email or remove exisiting email address</p>
+         </div>
+      
+      </div>
+  </div>
+   <br> <br> <br> <br> <br>
+ 
+
+{% endblock content %}

@@ -1,0 +1,89 @@
+{% load static %}
+
+<!-- ==== Mobile Nav bar === -->
+<div class="row" id="mb-nav" style="width:100%; padding-top:38px; padding-left:10px;">
+    <div class="col-12"><a href ="{% url 'index' %}"><img src="{% static 'img/edu_logo_black.png' %}" class="img" style="height:37px; width:83px;"></a>
+      <a id="toggler" style="font-size:33px; color:black; cursor:pointer;" onclick="openNav()">&#9776;</a>
+    </div>
+</div>
+  <div id="myNav" class="overlay">
+    <div class="row" style="padding-top:38px;">
+      <div class="col-3"><a href ="{% url 'index' %}"><img src="{% static 'img/edu_logo_black.png' %}" class="img" style="height:40px; width:86px;"></a></div>
+
+      <div class="col-6"></div>
+
+      <div class="col-3"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      </div>
+    </div>
+
+    <div class="row overlay-content">
+      <div class="col-12">
+        <a href="https://edubridgeacademy.com/blog">Blog</a>
+        <a href="{% url 'tracks' %}">Tracks</a>
+        <a href="{% url 'process' %}">The Process</a>
+        <a href="{% url 'faq' %}">FAQs</a>
+      </div>
+      <div class="col-12" style="margin-top:20px; text-decoration: underline;">
+      {% if user.is_authenticated %}
+        <a href="{% url 'account_logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'account_login' %}">Login</a>
+         {% endif %}
+      </div>
+      <div class="col-12" style="margin-left:5%; margin-top:40px;">
+       {% if user.is_authenticated %}
+        <button  onclick="window.location='{% url 'apply' %}';" type="button" class="nav-link"  id="join-btn">Apply</button>
+         {% else %}
+        <button  onclick="window.location='{% url 'account_signup' %}';" type="button" class="nav-link"  id="join-btn">Sign up</button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <!-- Mobile navbar edns here -->
+
+  <div class="row navbar navbar-dark navbar-expand-xl nav_">
+    <!-- Brand -->
+    <a class="navbar-brand mt-4" href="{% url 'index' %}"><img id="ic" src="{% static 'img/edu_logo_black.png' %}" class="img img-fluid" height="58px" width="108px"></a>
+
+
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse mt-4" id="myNavbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://edubridgeacademy.com/blog">Blog</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'tracks' %}" class="nav-link">Tracks</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'process' %}" class="nav-link">The Process</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'faq' %}" class="nav-link">FAQs</a>
+          </li>
+      </ul>
+      <ul class="navbar-nav">
+         {% if user.is_authenticated %}
+        <li class="nav-item">
+        <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>  
+         </li>
+        <li class="nav-item">
+        <button target="_blank" onclick="window.location='{% url 'apply' %}'" type="button" class="nav-link"  id="join-btn">Apply</button>
+        </li>
+        {% else %}
+        <li class="nav-item">
+        <a href="{% url 'account_login' %}" class="nav-link">Login</a>  
+         </li>
+        <li class="nav-item">
+        <button target="_blank" onclick="window.location='{% url 'account_signup' %}'" type="button" class="nav-link"  id="join-btn">Sign Up</button>
+        </li>
+        
+         {% endif %}
+      </ul>
+    </div>
+  </div>
+  <!--Where navbar ends-->
+
+   
+      

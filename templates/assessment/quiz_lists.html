@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+  
+ {% load static %}
+
+      
+   {% block extrastyle %}
+   
+   <link rel="stylesheet" type="text/css" href="{% static 'css/assessment_process.css' %}">
+   {% endblock extrastyle %}
+        
+      {% block title %} Available Assessments - {% endblock title %}
+        
+
+    {% block content %}
+
+{% include 'partials/other_navbar.html' %}
+
+      
+      
+<section>
+        <br> <br>
+
+    
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-8 col-sm-10 mx-auto ">
+                <div class = "row">
+                    
+                    <div class="modal-content modal-confirm">
+            
+                    <div class="modal-body">
+                        <br>
+                        <table class="table mb-0">
+                        <thead>
+                            <tr>
+                            <th>Quiz</th>
+                            <th>Length</th>
+                            <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for quiz in quizzes %}
+                            <tr>
+                                <td class="align-middle">{{ quiz.name }}</td>
+                                <td class="align-middle">{{ quiz.questions_count }} questions</td>
+                                <td class="text-right">
+                                <a href="{% url 'assessments:take_quiz' quiz.pk %}" class="btn btn-primary">Start quiz</a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td class="bg-light text-center font-italic" colspan="4">No quiz now.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        </table>
+                        
+                    </div>
+                   
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <br> <br><br> <br>
+</section>   
+{% endblock content %}         

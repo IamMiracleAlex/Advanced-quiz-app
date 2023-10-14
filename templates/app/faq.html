@@ -1,0 +1,428 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+      
+   {% block extrastyle %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+   <link rel="stylesheet" type="text/css" href="{% static 'css/faq.css' %}">
+   {% endblock extrastyle %}
+        
+      {% block title %} FAQs - {% endblock title %}
+
+{% block content %}
+
+<div class = "container-fluid main-view">
+
+{% include 'partials/navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+  <!-- Landing Page -->
+<br>
+
+  <div class = "row mt-5 mb-3">
+    <div class = "col-lg-12 text-center">
+        <h1 class = "faq-head">Frequently Asked Questions</h1>
+             <br>
+        <input id="search" onkeyup="search_faqs()" class="w-50 rounded" type="text" placeholder="Search for a question..."> 
+       
+    </div>
+</div>
+
+</div> <!--Container-fluid ends-->
+
+  
+<section>
+    <div class="container">
+        <div class="row mt-5">
+           <div class="col-lg-6 offset-lg-3 text-center ">
+            
+                <button class="btn btn-outline-success b_color font-weight-bolder m-1 space" onclick="window.location='#general'">GENERAL</button>
+        
+                <button class="btn btn-outline-success b_color font-weight-bolder m-1 space" onclick="window.location='#classes'">CLASSES</button>
+        
+                <button class="btn btn-outline-success b_color font-weight-bolder m-1 space" onclick="window.location='#application'">APPLICATION</button>
+            
+                <button class="btn btn-outline-success b_color font-weight-bolder m-1 space" onclick="window.location='#others'">OTHERS</button>
+                   
+           </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQS  Questions -->
+
+
+<br> <br>
+<section class="mt-5" id="general">
+
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="col-lg-3">
+            <h2>GENERAL</h2>
+            </div>
+           <div class="col-lg-6 mt-2">
+
+            <div id="accordion" class="accordion">
+               <div class=" mb-5">
+
+                  <div  class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     href="#collapseOne">
+                     <a class="card-title">
+                      What is the EduBridge Career Acceleration Program?
+                     </a>
+                  </div>
+                  <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+                     <p>
+                      It is an online work experience for those looking to learn work skills, and know how it is to work in an organization. You will have the opportunity to learn key work skills, work in a team, complete multiple work projects and earn a certificate to prove your achievements. 
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion" href="#collapseTwo">
+                     <a class="card-title">
+                        Who is it for, who is the target audience?
+                     </a>
+                  </div>
+                  <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
+                     <ul>
+                        <li>Students in final or penultimate year </li>
+                        <li>Corps members</li>
+                        <li>Graduates expecting NYSC call up</li>
+                        <li>Job seekers</li>
+                     </ul>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion" href="#collapseThree">
+                     <a class="card-title">
+                     How will it work and what do I need?
+                     </a>
+                  </div>
+                  <div id="collapseThree" class="card-body collapse" data-parent="#accordion">
+                     <p>For an average intern, you will need to have a laptop, internet access, access to Slack and email services (these are free solutions), power supply. </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion" href="#collapse4">
+                     <a class="card-title">
+                   How long will the program last for?
+                     </a>
+                  </div>
+                  <div id="collapse4" class="card-body collapse" data-parent="#accordion">
+                     <p>6 weeks. Activities will run from Monday to Friday. Classes on Saturday and Sunday. </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion" href="#collapse5">
+                     <a class="card-title">
+                        Is it a self paced program? Can I leave anytime?
+                     </a>
+                  </div>
+                  <div id="collapse5" class="card-body collapse" data-parent="#accordion">
+                     <p>It is not self-paced. It will be managed like the EduBridge Graduate Program. There is a timetable for several activities e.g. classes, group meetings, etc. Everyone starts the program at the same time and ends at the same time. Some activities will be held at the times that candidates choose, e.g. when the groups meet etc.
+                     </p>
+                  </div>
+
+
+               </div>
+            </div>
+
+                
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</section>
+
+ 
+
+<br> <br> 
+<section id="classes">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <h2>CLASSES</h2>
+            </div>
+           <div class="col-lg-6 mt-2">
+
+            <div id="accordion2" class="accordion">
+               <div class=" mb-5">
+
+                  <div  class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     href="#collapse6">
+                     <a class="card-title">
+                        Will EduBridge provide a laptop and other resources for me?
+                     </a>
+                  </div>
+                  <div id="collapse6" class="card-body collapse" data-parent="#accordion2">
+                      <p>No. </p>
+                     <p>
+                        EduBridge will provide the learning resources, facilitators, projects, learning tools such as Excel or Word templates etc. These resources are proprietary to EduBridge Academy and do not become yours by virtue of this program. But you will provide your own laptop computer, internet facilities, power supply, and any other resources you need to attend classes and complete projects. 
+                     </p>
+                      <p>
+                        So by signing up to this program, you are accepting that you will provide these resources for your own use. Also, by signing up to this program, you are accepting that you will work in a group and complete all assignments in the accepted time. 
+                      </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapse7">
+                     <a class="card-title">
+                     Will I come to the office?
+                     </a>
+                  </div>
+                  <div id="collapse7" class="card-body collapse" data-parent="#accordion2">
+                     <p>
+                        The program is 100% virtual. You will not need to come to a physical location. However, some project teams (in the unlikely event that they are in the same location), might decide to meet in person. This is outside of the direction of the Academy.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapse9">
+                     <a class="card-title">
+                    Will I intern with EduBridge or an employer?
+                     </a>
+                  </div>
+                  <div id="collapse9" class="card-body collapse" data-parent="#accordion2">
+                     <p>This virtual program is with EduBridge Academy for the purpose of your learning and workplace development. The projects that you will work on are not of direct benefit to the Academy hence you will not receive payment for the activities. They are strictly educational in nature. We do not promise to offer you employment based on this program. Also, we do not promise to offer you an program with another company.
+                    </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapse11">
+                     <a class="card-title">
+                     How will I get the certificate?
+                     </a>
+                  </div>
+                  <div id="collapse11" class="card-body collapse" data-parent="#accordion2">
+                     <p>By meeting the conditions set by EduBridge Academy. This include:
+                    </p>
+                    <ul>
+                        <li>Completing 95% attendance of classes</li>
+                        <li>By completing two group mprojects</li>
+                        <li>Sending in all reading assignments</li>
+                        <li>Being of good behavior as represented by your project managers and team members.</li>
+                    </ul>
+                  </div>
+
+               </div>
+            </div>
+
+         </div> 
+         <div class="col-lg-3"></div>
+        </div>
+    </div>
+</section>
+
+
+
+<br> <br> 
+<section id="application">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"> 
+            <h2>APPLICATION</h2>
+            </div>
+           <div class="col-lg-6 mt-2">
+
+            <div id="accordion3" class="accordion">
+               <div class=" mb-5">
+
+                  <div  class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     href="#collapse12">
+                     <a class="card-title">
+                       Will I get paid?
+                     </a>
+                  </div>
+                  <div id="collapse12" class="card-body collapse" data-parent="#accordion3">
+                     <p>
+                        No, you will not. This program is strictly for learning purposes. It does not mean that you work for EduBridge Academy or any company.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion3" href="#collapse13">
+                     <a class="card-title">
+                     Will I pay?
+                     </a>
+                  </div>
+                  <div id="collapse13" class="card-body collapse" data-parent="#accordion3">
+                     <p>
+                        Yes, you will. Please note that you may incur expenses on providing internet and power supply for yourself to be able to complete most activities.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion3" href="#collapse14">
+                     <a class="card-title">
+                     Will employers be waiting for us at the end?
+                     </a>
+                  </div>
+                  <div id="collapse14" class="card-body collapse" data-parent="#accordion3">
+                     <p>EduBridge Academy does not promise to match you to employers at the end of this program.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion3" href="#collapse15">
+                     <a class="card-title">
+                    How can I apply?
+                     </a>
+                  </div>
+                  <div id="collapse15" class="card-body collapse" data-parent="#accordion3">
+                     <p>The application link is <a href="{% url 'apply' %}" target="_blank" rel="noopener noreferrer">here</a>.
+                    </p>
+                    <p>The application process is:</p>
+                    <ul>
+                        <li>Online application</li>
+                        <li>Online assessment</li>
+                        <li>Successful candidates are contacted</li>
+                        <li>program starts</li>
+                    </ul>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion3" href="#collapse16">
+                     <a class="card-title">
+                    What are the benefits to me?
+                     </a>
+                  </div>
+                  <div id="collapse16" class="card-body collapse" data-parent="#accordion3">
+                    <ul>
+                        <li>You learn work skills</li>
+                        <li>You work in a team</li>
+                        <li>You work in a real life project for a company of your choice</li>
+                        <li>You get an EduBridge certificate</li>
+                        <li>You get the opportunity to complete a project in the career you love</li>
+                        <li>You will work with some of the brightest young people in Nigeria</li>
+                        <li>You can add this to your resume</li>
+                        <li>You can choose your desired career</li>
+                    </ul>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion3" href="#collapse17">
+                     <a class="card-title">
+                   Can I pay installmentally?
+                     </a>
+                  </div>
+                  <div id="collapse17" class="card-body collapse" data-parent="#accordion3">
+                     <p>Yes, you can pay in installments but you have to pay your first installments before the program begins.
+                    </p>
+                  </div>
+
+               </div>
+            </div>
+
+         </div> 
+         <div class="col-lg-3"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<br> <br> 
+<section id="others">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+            <h2>OTHERS</h2>
+            </div>
+           <div class="col-lg-6 mt-2">
+
+            <div id="accordion4" class="accordion">
+               <div class=" mb-5">
+
+                  <div  class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     href="#collapse18">
+                     <a class="card-title">
+                        Can I combine this with my work?
+                     </a>
+                  </div>
+                  <div id="collapse18" class="card-body collapse" data-parent="#accordion4">
+                     <p>
+                        You must be available to complete all tasks and activities.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion4" href="#collapse19">
+                     <a class="card-title">
+                       How will it work?
+                     </a>
+                  </div>
+                  <div id="collapse19" class="card-body collapse" data-parent="#accordion4">
+                     <p>
+                        EduBridge Academy will be both the school and employer. We will teach you, and give you work-based projects. We will give you feedback about how you are performing and how you might become better.
+                     </p>
+                     <p>
+                        You will learn these skills, work in teams and complete individual and team projects.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion4" href="#collapse20">
+                     <a class="card-title">
+                     What if I can’t complete a project or miss some sessions?
+                     </a>
+                  </div>
+                  <div id="collapse20" class="card-body collapse" data-parent="#accordion4">
+                     <p>We will issue warnings and if your performance does not improve, we will ask that you exit the program. We will issue all expectations of candidates before you begin the program.
+                     </p>
+                  </div>
+
+                  <div class="card-header p-1 collapsed font-weight-bold common b_color space" data-toggle="collapse"
+                     data-parent="#accordion4" href="#collapse21">
+                     <a class="card-title">
+                      How many hours will I devote per week?
+                     </a>
+                  </div>
+                  <div id="collapse21" class="card-body collapse" data-parent="#accordion4">
+                     <p>We expect that you might reasonably devote between 4 to 6 hours a day to the program. This is a work simulation, you are shadowing work. 
+                    </p>
+                  </div>
+
+               </div>
+            </div>
+
+         </div> 
+         <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>
+</section>
+    
+<br> <br> <br>
+{% include 'partials/footer.html' %}
+  
+
+{% endblock content %}
+
+
+{% block javascript %}
+
+<script>
+
+function search_faqs() { 
+    let input = document.getElementById('search').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('card-header'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="block";                  
+        } 
+    } 
+} 
+</script>
+{% endblock javascript %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block extrastyle %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/login_signup.css' %}">
+{% endblock extrastyle %}
+
+{% block title %} Application closed {% endblock title %}
+
+
+
+
+
+{% block content %}
+
+
+<section>
+
+   {% include 'partials/other_navbar.html' %}
+   {% include 'partials/alerts.html' %}
+
+   <br> <br>
+
+   <div class="container">
+      <div class="row ">
+         <div class="col-lg-7 col-sm-10 pt-5 pb-5 shadow-lg mx-auto rounded-lg">
+            <h4 class="text-center font-weight-bolder">Application Closed</h4>
+            <br>
+            <div class="text-center">
+            <img  src="{% static 'img/application_closed.png' %}" width="30%" height="auto" />
+            </div>
+            <br>
+            <div class="text-center">
+               Thank you for your interest in the Career Acceleration Program.
+               <br> <br>
+               <strong>Kindly note:</strong> Applications for this cohort has been closed.
+               <br>
+               We will notify you when applications for the next cohort begin.
+               <br> <br>
+               Please <a href="{% url 'contact' %}" target="_blank">contact us</a> if you have any questions or inquiries.
+               <br> <br>
+               <button type="submit" class="btn pr-5 pl-5 font-weight-bold submit-btn" onclick="window.location='{% url 'index' %}';" >
+               <i class="fas fa-home"> </i> GOTO HOMEPAGE
+               </button>
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+   <br> <br> <br>
+
+</section>
+
+{% endblock content %}
+
