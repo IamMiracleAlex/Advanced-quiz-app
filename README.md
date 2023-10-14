@@ -1,10 +1,9 @@
-# Edubridge WSP
-Bringing Real Work Exprience to all! A life changing experience!!
+# Advanced Quiz App
 
 **To run locally:**  
 >  cd Desktop (or any location for your choice)  
     
-  git clone https://github.com/EduBridge-Academy/wsp.git  
+  git clone 
 
 >  pip -r requirements_dev.txt  
 
